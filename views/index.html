@@ -1,0 +1,50 @@
+<% include header %>
+<div class="col-md-10">
+<%
+	if(roles.length){
+%>
+<h2><%=encabezado%></h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+	<h3 class="panel-title">Catalogo de Rol</h3>
+  </div>
+</div>
+<div class="panel-body">
+	<table class ="table table-hover">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Nombre Rol</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%
+			roles.forEach(function(rol){%>
+			<tr>
+				<td>
+					<%=rol.idRol%>
+				</td>
+				<td>
+					<%=rol.nombreRol%>
+				</td>				
+			</tr>
+			<%});
+		%>
+	</tbody>	
+	</table>
+	</div>
+	</div>
+	
+	<%}else{%>
+<div class="col-md-10">				
+<h2>Error!</h2>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+	<h3 class="panel-title">Error</h3>
+  </div>
+  <div class="panel-body">
+  Actualmente no hay roles
+</div>
+</div>
+<%}%>
+<% include footer%>
